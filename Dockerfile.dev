@@ -1,0 +1,11 @@
+FROM node:alpine
+WORKDIR '/app'
+
+COPY package.json .
+RUN npm install
+
+# instructor gave bad advice about keeping this line 
+# basically we need it only because the instructor continues to use it as a feature
+COPY . .
+
+CMD ["npm", "run", "start"]
